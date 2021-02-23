@@ -1,5 +1,5 @@
 from django.test import TestCase
 
 # Create your tests here.
-def no_test():
+def test_nothing():
     assert True

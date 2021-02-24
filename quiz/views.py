@@ -1,8 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-
-# Create your views here.
+from .models import Question
 
 
 def index(request):
-    return HttpResponse("Hi hello")
+    questions = Question.objects.all()
+    for question in questions:
+        question.choices = question.choice_set.all()
+    context = {
+        'questions': questions,
+    }
+    return render (request,'quiz.html', context)

@@ -11,7 +11,8 @@
       "SECRET_KEY":{
           "description":"A secret random key.",
           "generator": "secret"
-      }
+      },
+      "PORT":5000
    },
    "WEB_CONCURRENCY":{
       "description":"The number of processes to run.",

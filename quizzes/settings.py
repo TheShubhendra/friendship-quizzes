@@ -29,8 +29,12 @@ SECRET_KEY = config("SECRET_KEY", None)
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config("DEBUG", False)
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = [config("ALLOWED_HOST", None)]
 
+
+ADMINS = [
+    ("Shubhendra Kushwaha", "shubhendrakushwaha94@gmail.com"),
+    ]
 
 # Application definition
 

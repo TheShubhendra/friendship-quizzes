@@ -10,7 +10,9 @@ class Question(models.Model):
 
 
 class Choice(models.Model):
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
+    question = models.ForeignKey(
+        Question, on_delete=models.CASCADE, related_name="choices"
+    )
     choice_value = models.CharField(max_length=200)
     choice_image = models.CharField(max_length=200, default=None, blank=True)
     is_correct = models.BooleanField(default=False)

@@ -15,10 +15,10 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from friendshipQuestions.views import FriendshipQuestionList
+
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/quiz/", include("quiz.urls")),
     path("api-auth/", include("rest_framework.urls")),
-    path("api/friendship/questions/", FriendshipQuestionList.as_view(), name="Friendship Questions"),
+    path("api/friendship/", include("friendshipQuestions.urls")),
 ]

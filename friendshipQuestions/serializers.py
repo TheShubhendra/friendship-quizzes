@@ -1,5 +1,10 @@
 from rest_framework import serializers
-from .models import Question, Choice, Quiz
+from .models import (
+    Question,
+    Choice,
+    Quiz,
+    Response,
+    )
 
 class ChoiceSerializer(serializers.ModelSerializer):
     class Meta:
@@ -18,3 +23,9 @@ class QuizSerializer(serializers.ModelSerializer):
     class Meta:
         model = Quiz
         fields = ("quiz_id", "name", "data")
+
+
+class ResponseSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Response
+        fields = ("response_id", "name", "score")

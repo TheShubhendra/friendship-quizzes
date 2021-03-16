@@ -19,14 +19,14 @@ class QuestionSerializer(serializers.ModelSerializer):
         fields = ("question_id", "question", "choices")
 
 
+class ResponseSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Response
+        fields = ("response_id", "name", "score")
+
+
 class QuizSerializer(serializers.ModelSerializer):
     responses = ResponseSerializer(many=True, read_only=True)
     class Meta:
         model = Quiz
         fields = ("quiz_id", "name", "data", "responses")
-
-
-class ResponseSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = Response
-        fields = ("response_id", "name", "score")

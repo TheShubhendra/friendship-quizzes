@@ -13,6 +13,6 @@ class FriendshipQuestionList(generics.ListCreateAPIView):
     http_method_names = ['get']
 
 
-class FriendshipQuiz(APIView):
+class FriendshipQuiz(generics.ListCreateAPIView):
     queryset = Quiz.objects.all()
     serializer_class = QuizSerializer

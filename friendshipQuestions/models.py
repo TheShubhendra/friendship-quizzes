@@ -23,6 +23,6 @@ class Choice(models.Model):
 class Quiz(models.Model):
     quiz_id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=50)
-    
+    data = models.JSONField(default=dict)
     def __str__(self):
         return self.name

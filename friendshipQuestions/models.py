@@ -26,3 +26,15 @@ class Quiz(models.Model):
     data = models.JSONField(default=dict)
     def __str__(self):
         return self.name
+
+
+class Response(models.Model):
+    quiz = models.ForeignKey(
+        Quiz, on_delete=models.CASCADE, related_name="responses"
+        )
+    response_id = models.AutoField(primary_key=True)
+    name = models.CharField(max_length=50)
+    score = models.IntegerField(default=dict)
+
+    def __str__(self):
+        return self.answers

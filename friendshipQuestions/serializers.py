@@ -20,9 +20,10 @@ class QuestionSerializer(serializers.ModelSerializer):
 
 
 class QuizSerializer(serializers.ModelSerializer):
+    responses = ResponseSerializer(many=True, read_only=True)
     class Meta:
         model = Quiz
-        fields = ("quiz_id", "name", "data")
+        fields = ("quiz_id", "name", "data", "responses")
 
 
 class ResponseSerializer(serializers.ModelSerializer):
